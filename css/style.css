@@ -1,10 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
+@import url("https://fonts.googleapis.com/css?family=Spicy+Rice");
+
 body {
   background-color: #333;
   color: #fff;
+  font-family: "Open Sans Condensed", sans-serif;
 }
 .navbar {
-  border-bottom: #008ed6 3px solid;
+  border-bottom: #2980b9 3px solid;
   opacity: 0.8;
+  font-family: "Spicy Rice", cursive;
 }
 
 /* 
@@ -30,7 +35,7 @@ body {
 }
 
 #home-section .home-inner {
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 #home-section .card-form {
@@ -38,8 +43,25 @@ body {
 }
 
 #home-section .fas {
-  color: #008ed6;
+  color: #2980b9;
   background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.home-inner .card {
+  background-color: #2980b9;
+}
+
+/* 
+* EXPLORE
+* SECTION 
+*/
+
+#explore-section .fas,
+#share-section .fas {
+  background: #333;
+  color: #fff;
   padding: 5px;
   border-radius: 5px;
 }
