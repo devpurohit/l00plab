@@ -7,7 +7,7 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
 }
 .navbar {
-  border-bottom: #2980b9 3px solid;
+  border-bottom: #008ed6 3px solid;
   opacity: 0.8;
   font-family: "Spicy Rice", cursive;
 }
@@ -42,15 +42,12 @@ body {
   opacity: 0.8;
 }
 
-#home-section .fas {
-  color: #2980b9;
+#home-section .fas,
+#create-section .fas {
+  color: #008ed6;
   background: #fff;
   padding: 5px;
   border-radius: 5px;
-}
-
-.home-inner .card {
-  background-color: #2980b9;
 }
 
 /* 
