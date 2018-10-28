@@ -13,10 +13,10 @@
   <title>LoopLAB</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#main-nav" id="home-section">
 
   <!-- The NAVBAR -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
     <div class="container">
       <a href="index.html" class="navbar-brand">LoopLAB</a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -124,14 +124,14 @@
 
 
   <!-- The Explore Head -->
-  <section id="explore-head-section">
+  <section id="explore-head-section " class="bg-primary">
     <div class="container">
       <div class="row">
         <div class="col text-center py-5">
           <h1>Explore</h1>
           <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, quam? Soluta similique
             eligendi temporibus illum quasi itaque saepe ad odio.</p>
-          <a class="btn btn-outline-secondary">Find Out More</a>
+          <a class="btn btn-outline-dark">Find Out More</a>
         </div>
       </div>
     </div>
@@ -180,7 +180,7 @@
           <h1>Create</h1>
           <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, quam? Soluta similique
             eligendi temporibus illum quasi itaque saepe ad odio.</p>
-          <a class="btn btn-outline-light">Find Out More</a>
+          <a class="btn btn-outline-dark">Find Out More</a>
         </div>
       </div>
     </div>
@@ -228,7 +228,7 @@
           <h1>Share</h1>
           <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi, quam? Soluta similique
             eligendi temporibus illum quasi itaque saepe ad odio.</p>
-          <a class="btn btn-outline-light">Find Out More</a>
+          <a class="btn btn-outline-dark">Find Out More</a>
         </div>
       </div>
     </div>
@@ -269,9 +269,54 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
+  <footer id="main-footer" class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center py-2">
+          <div>L00PLAB &copy; <span id="year"></span></div>
+          <button class="btn btn-primary ml-auto" data-toggle="modal" data-target="#contactModal">Contact Us </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal text-dark fade" id="contactModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"> Contact Us </h5>
+          <button class="close" data-dismiss="modal"><span>&times;</span></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control"></textarea>
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-  <script src="./jquery-3.3.1.min.js"></script>
+  <script src="./js/jquery-3.3.1.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
@@ -280,6 +325,20 @@
   <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
+
+    // Init Scrollspy
+    $("#main-nav a").on("click", function (event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        const hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function () {
+          window.location.hash = hash;
+        });
+      }
+    });
   </script>
 </body>
 
